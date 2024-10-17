@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="Fotos26.jpg" type="image/x-icon">
+    <title>SEF</title>
+    <style>
+        body {
+            background-color: #04a2db;
+        }
+        h1{
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            text-align: center;
+        }
+
+
+        /* Estilos para centralizar os inputs */
+        .form{
+            margin-top: 1%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            
+            }
+
+            input{
+                padding: 10px;
+                margin: 10px auto;
+                font-size: 16px;
+                width: 300px;
+                text-align: center;
+                background-color: rgb(235, 221, 221);
+                border-radius: 10px;
+                border: 2px solid #000000
+            }
+           
+            
+      
+     
+
+      
+    </style>
+</head>
+
+<body>
+  
+    <h1>Registro de Residência e Nacionalidade</h1>
+
+    
+    
+    <div class="form">
+        <img src="logo_header.png" alt="Logo SEF">
+        <input type="text" name="NomeCompleto" id="NomeCompleto" placeholder="Nome Completo">
+         <input type="text" name="Contato" id="Contato" placeholder="Contato" >
+        <input type="text" name=" email" id="email" placeholder="Email">
+        <input type="text" name="idade" id="idade" placeholder="Idade">
+        <input type="text" name="pais" id="pais" placeholder="Nacionalidade">
+        <input type="number" name="EntradaPais" id="entradaPais" placeholder="Entrada no País"><!--Entrada no pais-->
+        <input type="number" name="anoAtual" id="anoAtual" placeholder="Ano Atual">
+        <input type="button" value="Verificar" onclick="Clicar()" style="cursor: pointer;">
+        <div id="res" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Resultado:</div>
+        
+      
+    </div>
+    <script>
+    
+        
+        function Clicar(){
+            var nome = window.document.getElementById('NomeCompleto').value
+            var Contato = window.document.getElementById('Contato').value
+            var email = window.document.getElementById('email').value
+            var idade = Number(document.getElementById('idade').value)
+            var pais = window.document.getElementById('pais').value
+            var entradaPais = Number(document.getElementById('entradaPais').value)
+            var anoAtual = Number(document.getElementById('anoAtual').value)
+            var res = document.getElementById('res')
+
+            var tempoResidencia = anoAtual - entradaPais
+            if(tempoResidencia <5 && idade >=18) {
+                res.innerHTML= `Seu nome é ${nome}, Contato telefônico ${Contato}, Email ${email}, idade ${idade}, de nacionalidade ${pais}, entrou no país no ano de ${entradaPais}, tem ${tempoResidencia} anos de residência e está apto a ter a autorização de residência.`; 
+            }else if(tempoResidencia >=5 && idade >=18){
+                res.innerHTML=`Seu nome é ${nome}, Contato telefônico ${Contato}, Email ${email}, idade ${idade}, de nacionalidade ${pais}, entrou no país no ano de ${entradaPais}, tem ${tempoResidencia} anos de residência e está apto a ter a Nacionalidade Portuguesa.`; 
+            }else if (tempoResidencia <1 && idade >=18){
+                res.innerHTML=  `Seu nome é ${nome}, Contato telefônico ${Contato}, Email ${email}, idade ${idade}, de nacionalidade ${pais}, entrou no país no ano de ${entradaPais}, tem ${tempoResidencia} ano(s) de residência e não está apto a ter a autorização de residência por não ter o tempo mínimo de 1 ano.`; 
+            }else if(tempoResidencia >5 && idade <18){
+                res.innerHTML= `Seu nome é ${nome}, Contato telefônico ${Contato}, Email ${email}, idade ${idade}, de nacionalidade ${pais}, entrou no país no ano de ${entradaPais}, tem ${tempoResidencia} anos de residência, mas não está apto a ter a autorização de residência ou nacionalidade, pois não tem a idade mínima de 18 anos.`;
+            }else if (pais === 'Portuguesa'){
+                res.innerHTML= `Seu nome é ${nome}, Contato telefônico ${Contato}, Email ${email}, idade ${idade}, de nacionalidade ${pais}, nasceu no país e está apto a obter o passaporte Português.`;
+            }else{
+                `Seu nome é ${nome}, Contato telefônico ${Contato}, Email ${email}, idade ${idade}, de nacionalidade ${pais}, nasceu no país e está apto a obter o passaporte Português.`;
+            }
+        }
+        
+        
+        </script>
+</body>
+</html>
