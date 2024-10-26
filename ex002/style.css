@@ -1,0 +1,36 @@
+body{
+    background-color: burlywood;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 16pt;
+}
+header{
+color: darkblue;
+text-align: center;
+}
+section{
+background-color: rgb(236, 236, 236);
+border-radius: 10px;/*devo pesquisar sobre diferença entre px(pixel), pt e %*/
+padding: 15px; /*Devo pesquisar sobre*/
+width: 500px; /*Width para ele ficar responsivo em todas as telas*/
+margin: auto; /*para centralizar minha div*/
+box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5); /* pixel 1 deslocamente da sombra lateral, o segundo vertical terceiro espalhamento*/
+}
+footer{
+    font-style: italic;
+    color: darkblue;
+    text-align: center;
+
+}
+
+#imagem{
+    max-width: 200%;
+    height: auto;
+    
+}
+#foto{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+

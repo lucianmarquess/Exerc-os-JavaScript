@@ -1,0 +1,42 @@
+header{
+margin-top: 0%;
+background-color: aliceblue;
+width: 500px; /* 500px irei pesquisar mais mas ela para ficar responsivo basta defenir esse tamanho*/
+margin-left: 32%;
+text-align: center;
+height: auto;
+font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+font-size: 30px;
+border-radius: 10px;
+
+
+
+}
+
+body{
+background-color: rgb(0, 0, 0);
+
+
+
+}
+
+section{
+    background-color: rgb(255, 255, 255);
+    width: 700px;
+    height: 500px;
+    margin: auto; /*mandei a section para o meio com esse comando*/
+    border-radius: 10px;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.8); /* Fundo branco semi-transparente */
+    padding: 20px;
+    /*cada background da tela vai mudar a imagem de acordo com o periodo do dia  e noite */
+    
+    
+    
+
+}
+footer{
+text-align: center;
+color: rgb(250, 250, 250);
+font-style: italic;
+}
